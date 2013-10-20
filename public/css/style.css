@@ -89,16 +89,20 @@ h1,h2{
 }
 
 .sidebar{
+	height: 100%;
 	margin-left:0px !important;
 	margin-right:0px !important;
 	width:34.189893617021278%!important;
 	float:right!important;
 	background:#2b3035;
 	border-left:3px solid #5f1d00;	
+	position: relative;
+	top: 0;
 }
 
 .innersidebar{
 	position:relative;
+	text-align: center;
 }
 
 .sidebar h1{
@@ -157,9 +161,16 @@ h1,h2{
 	padding:0px;
 }
 
+.work {
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .work .span4{
-	margin-left:0;
-	width:33.323931623931625%;
+
+	margin-left: 20px !important;
+	width: 25%;
 }
 
 .workimg{
@@ -185,7 +196,7 @@ h1,h2{
 	left:0;
 	bottom:0;
 	cursor:pointer;	
-	background: rgba(43,48,53,0.9) url(../images/hover.png) center no-repeat;
+	background: rgba(43,48,53,0.9);
 	opacity:0;
 	-webkit-transition: opacity 1.5s ease;
 	-moz-transition: opacity 1.5s ease;
@@ -388,6 +399,7 @@ body {
 	width:100%!important;
 	float:none!important;
 	border-left: none;
+	position: absolute;
 }
 
 

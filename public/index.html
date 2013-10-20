@@ -1,214 +1,81 @@
 <!doctype html>
-<head>
-    <meta charset="utf-8">
-	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-	<title>nodecast - browser receiver</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-    <meta name="author" content="">
-	<!-- media-queries.js (fallback) -->
-		<!--[if lt IE 9]>
-			<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>			
+	<head>
+	    <meta charset="utf-8">
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+		<title>nodecast - browser receiver</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+	    <meta name="author" content="">
+		<!-- media-queries.js (fallback) -->
+			<!--[if lt IE 9]>
+				<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>			
+			<![endif]-->
+
+			<!-- html5.js -->
+			<!--[if lt IE 9]>
+				<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-
-		<!-- html5.js -->
-		<!--[if lt IE 9]>
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	<!--stylesheets-->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
-	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css" >	
-	<link rel="stylesheet" href="css/supersized.css" type="text/css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="css/prettyPhoto.css"/>
-	<link rel="stylesheet" type="text/css" href="css/style.css" >
-	
-	<!--<link rel="icon" type="image/x-icon" href="images/favicon.ico" />-->
-	<!--js-->
-	<script src="js/jquery-1.9.0.min.js"></script>
-	<script src="js/countdown.js"></script>
-	<script src="js/jquery.prettyPhoto.js"></script>	
-	
-	<script>
-	/* <![CDATA[ */
-		$(document).ready(function(){
-			$("#countdown").countdown({
-				date: "26 november 2013 12:00:00", <!--set website launch date and time here-->
-				format: "on"
-			},
-			
-			function() {
-				// callback function
-			});
-			
-			var left = $('.newsletter').offset().left;
-
-			$("#subscribe").click(function(event){
-
-			$(".newsletter").show().animate({ left : left }, { duration: 1000 });
-
-				event.preventDefault();
-				return false;				
-			});
-			
-			$(".close1").click(function(event){
-						
-			$(".newsletter").animate({ left : "110%" }, { duration: 1000 });
-
-				event.preventDefault();
-				return false;				
-			});
-			
-			$("#send").click(function(){
-				var cname = $(this).parent().find("#name").val() ;
-				var cemail = $(this).parent().find("#email").val() ;
-				var errcount=0;
-				  if(cname.length < 1)
-				  {		
-				  $(this).parent().find("#name").addClass("error");
-				  errcount = 1;
-				  }	else
-				   $(this).parent().find("#name").removeClass("error");
-				   
-				var emailRegex = new RegExp(/^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$/i);
-				var valid = emailRegex.test(cemail);
-				if (!valid) {
-					$(this).parent().find("#email").addClass("error");
-					errcount = 1;
-				}else
-					$(this).parent().find("#email").removeClass("error");
-				
-				  if(errcount ==0 )
-				  {
-					//form submitted succesfully
-					return false;
-				  }
-				  else
-				  {	  	  
-				  return false;
-				  }
+		<!--stylesheets-->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css" >	
+		<link rel="stylesheet" href="css/supersized.css" type="text/css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/prettyPhoto.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css" >
 		
-			});	
-			$("a[data-rel^='prettyPhoto']").prettyPhoto({deeplinking:false});
-			
-			$(window).resize(function(){
-			var height=$('.activeslide').height();
-			var sidebarheight=$('.sidebar').height();
+		<!--<link rel="icon" type="image/x-icon" href="images/favicon.ico" />-->
+		<!--js-->
+		<script src="js/jquery-1.9.0.min.js"></script>
+		<script src="js/jquery.prettyPhoto.js"></script>	
+	
+	</head>
 
-				$('.sidebar').css('min-height',height);
-			});	
-			$(window).resize();
-		});
-	/* ]]> */
-	</script>
-	
-	
-	
-	
-</head>
+	<body>
 
-<body>
-		<div class="row-fluid container1">
-			<div class="span4 sidebar">
-				<div class="innersidebar">
-				<h1>We are almost ready, <a href="#" id="subscribe">subscribe</a> right now!</h1>
-				<div class="timer">
-					<ul id="countdown">
-						<li>
-							<span class="days">00</span>
-							<p class="timeRefDays">days</p>
-						</li>
-						<li>
-							<span class="hours">00</span>
-							<p class="timeRefHours">hours</p>
-						</li>
-						<li>
-							<span class="minutes">00</span>
-							<p class="timeRefMinutes">mins</p>				
-						</li>
-						<li>
-							<span class="seconds">00</span>
-							<p class="timeRefSeconds">secs</p>
-						</li>
-					</ul>
-				</div><!--timer-->
-				
-				<div class="row-fluid work">
-					<div class="span4 workimg">
-						<img src="images/thumbnails/image1.jpg" alt="">
-						<a href="images/image1.jpg" data-rel="prettyPhoto" class="mask"> <!-- mask !-->
-						</a>
-					</div>
-					<div class="span4 workimg">
-						<img src="images/thumbnails/image2.jpg" alt="">
-						<a href="images/image2.jpg" data-rel="prettyPhoto" class="mask"> <!-- mask !-->
-						</a>						
-					</div>
-					<div class="span4 workimg">
-						<img src="images/thumbnails/image3.jpg" alt="">
-						<a href="images/image3.jpg" data-rel="prettyPhoto" class="mask"> <!-- mask !-->
-						</a>						
-					</div>	
-				</div><!--work-->
-				
-									<!--newsletter-->
-				<div class="newsletter">
-					<div class="newsheading">
-						<h1>Stay updated</h1>
-						<h2>get ready for launch</h2>
-					</div>
-					<div class="centernewsletter">
-						<form method="post" id="signupform">	
-							<input type="text" name="name" id="name" placeholder="Name"><br>
-							<input type="email" name="email" id="email" placeholder="Email@address.com"><br>
-							<a href="#" id="send">Subscribe</a>
-						</form>
-						
-						<a href="#" class="close1"></a>
-					</div>	
-				</div><!--span4-->
+		<div id="content" class="row-fluid" style="min-height: 100%; min-width: 100%; display:none; vertical-align: top; position: absolute; z-index: 0;">
+			<webview id="content-view" style="width:100%; height:100%; z-index: 0"></webview>
+		</div>
+
+		<div class="span4 sidebar" active="true" style="height: 100%">
+			<div class="innersidebar">
+			<h1>ready to cast</h1>
+
+			<p>&nbsp;</p>
 			
-			</div>	
-			
-				<div class="social">
-					<p>Follow us on social media</p>
-					<div class="socialbox">
-						<a href="#" class="fb"></a>
-						<a href="#" class="tw"></a>
-						<a href="#" class="dribble"></a>
-						<a href="#" class="flickr"></a>
-					</div>
+			<div class="work">
+				<div class="span4 workimg">
+					<img src="img/icons/chrome.png" alt="Google Chrome">
+					<a href="http://google.com" target="_blank" class="mask"></a>
 				</div>
-				
-			</div><!--span4-->
-		</div><!--row-fluid-->
+				<div class="span4 workimg">
+					<img src="img/icons/youtube.png" alt="YouTube">
+					<a href="http://youtube.com/tv" target="_blank" class="mask"></a>
+				</div>
+				<div class="span4 workimg">
+					<img src="img/icons/googleplay.png" alt="Google Play">
+					<a href="http://play.google.com" target="_blank" class="mask"></a>
+				</div>
+			</div><!--work-->
+		</div>
+	
+		<div class="social">
+			<p>Pressione M para Menu
+			<br /><br />Pressione H para Home</p>
+			<br /><br />Pressione ESC para Sair</p>
+			<p>&nbsp;</p>
+		</div>
+			
+		</div><!--span4-->
 	
 		<!--js-->	
 		<script src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/supersized.3.2.7.js"></script>
 		<script type="text/javascript" src="js/supersized.shutter.js"></script>
+		<script type="text/javascript" src="js/mousetrap.min.js"></script>
 
 		<!-- cast receiver -->
 		<script type="text/javascript" src="js/cast.js"></script>
 
-		<!-- layout -->
-		<script type="text/javascript">
-		/* <![CDATA[ */			
-		jQuery(function($){
-						
-			$.supersized({			
-				// Functionality
-				slide_interval   : 3000,		// Length between transitions
-				transition       : 1, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
-				transition_speed : 1000,		// Speed of transition														   
-				// Components							
-				slide_links		 : 'false',	
-				slides 			 : [			// Slideshow Images
-									{image : 'http://vegatechnolabs.com/coming/images/bg.jpg'}, //set background images here (absolute path) //
-									{image : 'http://vegatechnolabs.com/coming/images/bg1.jpg'}  //set background images here (absolute path) //
-									]					
-			});		
-		});
-		/* ]]> */	    
-		</script>
+		<!-- keyboard handler -->
+		<script type="text/javascript" src="js/keyboard.js"></script>
 	</body>
 </html>

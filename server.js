@@ -34,7 +34,13 @@ app.use(app.router);
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(function (req, res, next) {
+
 	res.removeHeader("Connection");
+
+	res.set({
+		'X-Frame-Options': 'GOFORIT'
+	});
+
 	next();
 });
 
@@ -148,7 +154,13 @@ function setupApps(addr) {
 	Apps = require('./apps/apps.js');
 	Apps.init(fs, app);
 	Apps.registerApp(app, addr, "ChromeCast", "https://www.gstatic.com/cv/receiver.html?$query", "");
+
+	// YouTube TV Plugin
 	Apps.registerApp(app, addr, "YouTube", "https://www.youtube.com/tv?$query", "");
+
+	// Youtube Fullscreen Player
+	//Apps.registerApp(app, addr, "YouTube", "https://www.youtube.com/v/?autoplay=1&hd=1&$query", "");
+
 	Apps.registerApp(app, addr, "Netflix", "http://movies.netflix.com/WiPlayer?$query", "");
 	Apps.registerApp(app, addr, "PlayMovies", "https://play.google.com/video/avi/eureka?$query", "");
 	Apps.registerApp(app, addr, "GoogleMusic", "https://jmt17.google.com/sjdev/cast/player", "");

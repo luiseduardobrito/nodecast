@@ -1,0 +1,22 @@
+{
+	"manifest_version": 2,
+	"name": "nodecast",
+	"description": "Use your Google Chrome as a chromecast device.",
+	"version": "0.0.1",
+	"app": {
+		"background": {
+			"scripts": ["js/background.js"]
+		}
+	},
+	"icons": {
+		"128": "img/icons/chrome.png"
+	},
+	"permissions": [
+		"webview",
+		"notifications",
+		"fullscreen",
+		"*://*.google.com/*",
+		"*://*.youtube.com/*",
+		"*://*.netflix.com/*"
+	]
+}
