@@ -1,0 +1,408 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+HTML5 display-role reset for older browsers 
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+
+body,html{
+	position:relative;
+	overflow-x:hidden;
+}
+
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*fonts*/
+@font-face {
+	font-family: 'proxima-light';
+	src: url('../fonts/proximanova-light-webfont.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/proximanova-light-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('../fonts/proximanova-light-webfont.woff') format('woff'), /* Modern Browsers */
+	     url('../fonts/ProximaNova-Regular.otf')  format('otf'), 
+	     url('../fonts/proximanova-light-webfont.svg') format('svg'); /* Legacy iOS */
+}
+@font-face {
+	font-family: 'proxima-regular';
+	src: url('../fonts/proximanova-regular-webfont.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('../fonts/proximanova-regular-webfont.woff') format('woff'), /* Modern Browsers */
+	     url('../fonts/ProximaNova-Regular.otf')  format('otf'), 
+	     url('../fonts/proximanova-regular-webfont.svg') format('svg'); /* Legacy iOS */
+}
+/*fonts end*/
+body{
+	font-family: 'proxima-light', arial;
+	font-size:24px;
+	color:#515963;
+}
+
+a {
+   outline: 0!important;
+}
+   
+h1,h2{
+	font-family: 'proxima-regular', arial;
+	font-size: 48px;
+	color:#fff;
+}
+
+.imageblock{
+	background:url(../images/bg.jpg) center no-repeat;
+	background-size:cover;
+	height:820px;
+}
+
+.sidebar{
+	margin-left:0px !important;
+	margin-right:0px !important;
+	width:34.189893617021278%!important;
+	float:right!important;
+	background:#2b3035;
+	border-left:3px solid #5f1d00;	
+}
+
+.innersidebar{
+	position:relative;
+}
+
+.sidebar h1{
+	line-height:55px;
+	font-size:41px;
+	padding:60px 35px 0 35px;
+	text-align:center;
+}
+.sidebar i{
+	color: #515963;
+}
+.sidebar a{
+	color: #fc3b3b;
+	border-bottom:2px solid #fc3b3b;
+}
+.sidebar a:hover{
+	color: #fff;
+	text-decoration:none;
+	border-bottom:2px solid #fc3b3b;
+	transition: color 0.5s ease-in-out;
+}
+.timer{
+	padding:45px 35px 60px 35px;
+	text-align:center;
+}
+.timer li{
+	display:inline-block;
+	text-align:center;
+	padding:15px;
+	background:#1d2126;
+	min-width:56px;
+	margin-right:-4px;
+	margin-bottom:2px;
+}
+
+.timer li:last-child{
+	margin-right:0;
+}
+
+.days,.hours,.minutes{
+	font-family:'proxima-light', arial;
+	font-size:41px;
+	color:#fff;
+}
+.seconds{
+	font-family:'proxima-light', arial;
+	font-size:41px;
+	color:#fc3b3b;
+}
+.timeRefDays,.timeRefHours,.timeRefMinutes,.timeRefSeconds{
+	color:#515963;
+	font-size:24px;
+}
+
+.work img{
+	padding:0px;
+}
+
+.work .span4{
+	margin-left:0;
+	width:33.323931623931625%;
+}
+
+.workimg{
+	position:relative;
+	cursor:pointer;
+}
+
+.workimg:hover .mask{
+	opacity:1;
+	width:100%;
+	-webkit-transition: opacity 1.5s ease;
+	-moz-transition: opacity 1.5s ease;
+	-o-transition: opacity 1.5s ease;
+	-ms-transition: opacity 1.5s ease;
+	transition: opacity 1.5s ease;	
+}	
+
+.mask{
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	bottom:0;
+	cursor:pointer;	
+	background: rgba(43,48,53,0.9) url(../images/hover.png) center no-repeat;
+	opacity:0;
+	-webkit-transition: opacity 1.5s ease;
+	-moz-transition: opacity 1.5s ease;
+	-o-transition: opacity 1.5s ease;
+	-ms-transition: opacity 1.5s ease;
+	transition: opacity 1.5s ease;
+	border-bottom:none!important;	
+}
+
+.socialbox{
+	padding:10px 0 40px 0;
+	text-align:center;
+}
+
+.socialbox a{
+	-webkit-transition: all ease-in 1s; 
+	-moz-transition: all ease-in 1s;    
+	transition: all ease-in 1s;
+}
+
+.socialbox a:hover{
+	 -moz-transform: rotate(-360deg);
+	 -webkit-transform: rotate(-360deg);
+	 transform: rotate(-360deg);	
+}
+
+.fb{
+	width:71px;
+	height:71px;
+	background:url(../images/fb.png);
+	display:inline-block;
+	border-bottom:none!important;
+		
+}
+
+.tw{
+	width:71px;
+	height:71px;
+	background:url(../images/twitter.png);
+	display:inline-block;
+	border-bottom:none!important;
+}
+
+.dribble{
+	width:71px;
+	height:71px;
+	background:url(../images/dribbble.png);
+	display:inline-block;
+	border-bottom:none!important;		
+}
+
+.flickr{
+	width:71px;
+	height:71px;
+	background:url(../images/flickr.png);
+	display:inline-block;
+	border-bottom:none!important;		
+}
+
+.social{
+	text-align:center;
+	padding-top:60px;
+}
+.social p{
+	padding-bottom:25px;
+}
+.newsletter{
+	background:#1d2126;
+	position:absolute;
+	width:100%;
+	height:100%;
+	right:0;
+	left:100%;
+	top:0;
+	display:none;
+}
+
+.newsletter h1,.newsletter h2{
+	line-height:45px;
+	font-size:41px;
+	text-align:center;
+	padding:0;
+}
+
+.newsheading{
+	padding:60px 35px 40px 35px;	
+}
+
+#signupform{
+	text-align:center;
+	padding:0 35px 25px;
+}
+
+#name,#email,#send{
+	width:100%;
+	background:transparent;
+	box-shadow:none;
+	border-radius:0;
+	margin-bottom:20px;
+	border-color:#515963;
+	padding:10px 0;
+	text-indent:10px;
+	font-size:18px;
+	color:#515963;	
+}
+
+#send{
+	border: 1px solid #000;
+	display: inline-block;
+	width: 100%;
+	text-align:center;
+	color:#fff;
+	text-decoration:none;
+	text-transform: uppercase;	
+	background:#000;
+}
+
+#send:hover{
+	color:#FC3B3B;
+	border-color:#000;
+	text-decoration:none;	
+}
+
+#signupform .error{
+	border-color:#fc3b3b;
+	text-decoration:none;
+}
+
+.close1{
+	width:70px;
+	height:70px;
+	display:inline-block;
+	background:url(../images/sprites.png);
+	border-bottom:none!important;
+}
+
+.close1:hover{
+	background:url(../images/sprites.png) -74px 0;
+}
+
+.centernewsletter{
+	text-align:center;
+}
+
+.pp_social iframe{
+	overflow:hidden!important;
+}
+
+
+/* Large desktop */
+@media (min-width:1367px)
+{
+	.sidebar i{
+		color: #515963;
+	}
+	.sidebar a{
+		color: #515963;
+		border-bottom:2px solid #fc3b3b;
+	}
+	.sidebar a:hover{
+		color: #fff;
+		text-decoration:none;
+		border-bottom:2px solid #fc3b3b;
+		transition: color 0.5s ease-in-out;
+	}
+	.timer li{
+		display:inline-block;
+		text-align:center;
+		padding:20px;
+		background:#1d2126;
+		min-width:56px;
+	}
+	.days,.hours,.minutes{
+		font-family:'proxima-light', arial;
+		font-size:48px;
+		color:#fff;
+	}
+	.seconds{
+		font-family:'proxima-light', arial;
+		font-size:48px;
+		color:#fc3b3b;
+	}
+	.timeRefDays,.timeRefHours,.timeRefMinutes,.timeRefSeconds{
+		color:#515963;
+		font-size:24px;
+	}
+}
+
+@media (min-width: 1200px) {
+
+}
+
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+body {
+	padding:20px;
+}
+.sidebar{
+	width:100%!important;
+	float:none!important;
+	border-left: none;
+}
+
+
+.work .span4 {
+float: left;
+}
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+}
+
+
+/* potrait phones and down */
+@media (max-width: 320px) {
+
+}

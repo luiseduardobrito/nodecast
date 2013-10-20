@@ -149,6 +149,7 @@ function setupApps(addr) {
 	Apps.init(fs, app);
 	Apps.registerApp(app, addr, "ChromeCast", "https://www.gstatic.com/cv/receiver.html?$query", "");
 	Apps.registerApp(app, addr, "YouTube", "https://www.youtube.com/tv?$query", "");
+	Apps.registerApp(app, addr, "Netflix", "http://movies.netflix.com/WiPlayer?$query", "");
 	Apps.registerApp(app, addr, "PlayMovies", "https://play.google.com/video/avi/eureka?$query", "");
 	Apps.registerApp(app, addr, "GoogleMusic", "https://jmt17.google.com/sjdev/cast/player", "");
 	Apps.registerApp(app, addr, "GoogleCastSampleApp", "http://anzymrcvr.appspot.com/receiver/anzymrcvr.html", "");
